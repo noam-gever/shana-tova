@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שנה טובה מנעם AI</title>
+<meta name="description" content="מתנה לראש השנה: פרומפט שבונה ברכה אינטראקטיבית לחבר">
+<style>
+  :root{--cream:#fff7ea;--gold:#c9931a;--red:#b8322f;--ink:#2b1d12;--muted:#7a6552;--btn:#b8322f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Rubik","Heebo","Assistant",-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:520px;margin:0 auto;padding:28px 20px 60px}
+  header{text-align:center;margin-bottom:22px}
+  .apple{width:84px;height:84px;margin:0 auto 10px;display:block}
+  h1{font-size:1.7rem;margin:0 0 6px;font-weight:800}
+  .sub{color:var(--muted);margin:0;font-size:1.02rem}
+  .copy{display:block;width:100%;border:0;border-radius:18px;padding:20px 16px;font-size:1.35rem;font-weight:800;color:#fff;background:var(--btn);box-shadow:0 8px 24px rgba(184,50,47,.28);cursor:pointer;font-family:inherit;transition:transform .08s}
+  .copy:active{transform:scale(.98)}
+  .copy.done{background:#2e8b57;box-shadow:0 8px 24px rgba(46,139,87,.28)}
+  .hint{text-align:center;color:var(--muted);font-size:.92rem;margin:10px 0 26px}
+  ol{padding:0;margin:0;list-style:none;counter-reset:s}
+  li{position:relative;background:#fff;border:1px solid #f0e2c8;border-radius:16px;padding:16px 58px 16px 16px;margin-bottom:12px;font-size:1.05rem}
+  li::before{counter-increment:s;content:counter(s);position:absolute;right:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+  li b{font-weight:700}
+  li small{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
+  .gem{display:block;text-align:center;margin:18px 0 0;padding:14px;border-radius:14px;background:#fff;border:2px solid var(--gold);color:var(--ink);font-weight:700;text-decoration:none;font-size:1.05rem}
+  details{margin-top:30px}
+  summary{cursor:pointer;color:var(--muted);font-size:.95rem;text-align:center;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #f0e2c8;border-radius:14px;padding:16px;font-family:inherit;font-size:.92rem;line-height:1.6;margin-top:12px;direction:rtl;text-align:right}
+  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.9rem}
+  footer a{color:var(--red);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="apple" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M50 22c-6-9-16-9-22-4-9 7-10 22-3 37 6 13 13 20 20 20 3 0 4-1 5-1s2 1 5 1c7 0 14-7 20-20 7-15 6-30-3-37-6-5-16-5-22 4z" fill="#c8302d"/>
+      <path d="M40 42c-4 6-4 14-1 21" stroke="#fff" stroke-opacity=".45" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M50 22c0-6 2-10 5-13" stroke="#5b3a1e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M53 17c6-6 14-5 17 0-5 5-12 6-17 0z" fill="#4e9a3f"/>
+      <path d="M62 44c3 3 4 8 4 12s-2 8-5 9c0-3-3-5-3-9s2-8 4-12z" fill="#f2b632"/>
+    </svg>
+    <h1>שנה טובה, מנעם AI</h1>
+    <p class="sub">מתנה קטנה: ברכה שנבנית סביב מה שהחבר שלכם אוהב.<br>לוקח דקה. בלי להתקין כלום.</p>
+  </header>
+
+  <button class="copy" id="copyBtn" type="button">העתקת הפרומפט</button>
+  <p class="hint" id="hint">לחיצה אחת, וזה מועתק. אחר כך שלושה צעדים:</p>
+
+  <ol>
+    <li><b>פותחים את ג'מיני</b> בטלפון.<br><small>אפליקציית Gemini, או gemini.google.com בדפדפן.</small></li>
+    <li><b>לוחצים על Canvas</b> לפני שמדביקים.<br><small>הכפתור נמצא מתחת לתיבת הכתיבה. בלי זה תקבלו קוד במקום אתר.</small></li>
+    <li><b>מדביקים</b>, ובשורה האחרונה מחליפים את השם ואת הדבר שהוא אוהב. שולחים.<br><small>כשמוכן: "שיתוף", מעתיקים קישור, ושולחים לחבר בוואטסאפ.</small></li>
+  </ol>
+
+  <a class="gem" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a>
+
+  <details>
+    <summary>לראות את הפרומפט המלא</summary>
+    <pre id="prompt">תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
+
+לטלפון בלבד:
+העמוד נפתח רק בטלפון, במסך צר ואנכי (390 פיקסלים רוחב). מחשב לא מעניין. הכל נמדד באחוזים מהמסך, שום דבר לא ברוחב קבוע. הסצנה, הברכה והכפתור נכנסים כולם במסך אחד בלי גלילה ובלי שדבר מסתיר דבר. פונט גדול, כפתור שאפשר ללחוץ עם אגודל.
+
+הרעיון:
+הדבר שהוא אוהב הוא הכוכב, לא הברכה. תמציא סצנה מקורית שבה הדבר הזה במרכז המסך, והחבר עושה איתו פעולה: לוחץ, גורר, מנער, מגרד. בלי הפעולה שלו לא קורה כלום.
+אחרי הפעולה מתחיל מהלך של כמה שניות: דברים זזים, נופלים, נבנים, מתפרקים, לפי מה שמתאים לדבר. הברכה נחשפת רק בסוף המהלך, בדרך מעניינת. וגם אחרי שהיא הופיעה הסצנה ממשיכה לחיות מאחוריה ומפתיעה מדי פעם.
+תחשוב גדול. אל תלך על הרעיון הראשון. מה הדבר הכי חמוד ומצחיק שיכול לקרות לדבר הזה?
+
+איך זה נראה:
+הדבר מאויר ב-SVG שאתה מצייר: צורה, צבע, צל, פרטים, ותנועה עדינה עוד לפני שנוגעים בו. איור, לא אייקון. אסור אימוג'י בשום מקום. איפשהו בסצנה תפוח, רימון או דבש, מצוירים. בלי שופר ובלי סמלים דתיים.
+
+הברכה: 2 עד 3 שורות, עברית פשוטה כמו שמדברים, בלי קלישאות, עם השם שלו. במרכז המסך, הסצנה ממשיכה מאחוריה.
+
+בתחתית המסך, בקטן:
+"הברכה נבנתה עם AI, בעזרת נעם AI. אהבת? שתף."
+שורה אחת עד 10 מילים, שפונה אליו דרך הדבר שהוא אוהב ואומרת למה כדאי לעקוב אחרי הסטטוס של נעם AI. רגוע, בלי "מטורף" ו"בענק".
+כפתור "לחץ כאן למעקב בסטטוס" לקישור: https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI
+הכפתור מהבהב בעדינות, ואחרי 20 שניות גדל קצת ועולה מעט. אף פעם לא מסתיר את הברכה.
+
+לפני הסצנה: הוראה אחת עד 5 מילים, רק מה לעשות. בלי תמונות חיצוניות. לא לשאול שאלות, תמציא ותבנה.
+
+השם שלו: [כאן השם] · הדבר שהוא הכי אוהב: [כאן הדבר]</pre>
+  </details>
+
+  <footer>נבנה עם AI. רוצים ללמוד לעשות דברים כאלה? <a href="https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI">לסטטוס של נעם AI</a></footer>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint');
+  var text=document.getElementById('prompt').textContent;
+  function ok(){btn.textContent='הועתק! עכשיו לג\'מיני';btn.classList.add('done');hint.textContent='הפרומפט אצלכם. ממשיכים לצעד 1.';}
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');
+    ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);
+    ta.focus();ta.select();ta.setSelectionRange(0,text.length);
+    var done=false;try{done=document.execCommand('copy');}catch(e){}
+    document.body.removeChild(ta);
+    if(done){ok();}else{hint.textContent='לא הצלחנו להעתיק אוטומטית. פתחו "לראות את הפרומפט המלא", לחיצה ארוכה, בחר הכל, העתק.';document.querySelector('details').open=true;}
+  }
+  btn.addEventListener('click',function(){
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback);}else{fallback();}
+  });
+})();
+</script>
+</body>
+</html>
