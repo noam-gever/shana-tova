@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>שנה טובה | נעם AI</title>
-<meta name="description" content="מתנה לראש השנה: ברכה אישית למי שאתם אוהבים, שנבנית סביב מה שהוא אוהב. דקה אחת, בלי להתקין כלום.">
+<meta name="description" content="מתנה לראש השנה: ברכה אישית למי שאתם אוהבים, שנבנית סביב מי שהוא. דקה אחת, בלי להתקין כלום.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="נעם AI">
 <meta property="og:locale" content="he_IL">
 <meta property="og:url" content="https://noam-gever.github.io/shana-tova/">
 <meta property="og:title" content="שנה טובה לכל הצופים. ומתנה קטנה ממני.">
-<meta property="og:description" content="ברכה אישית למי שאתם אוהבים, שנבנית סביב מה שהוא אוהב. דקה אחת, בלי להתקין כלום.">
+<meta property="og:description" content="ברכה אישית למי שאתם אוהבים, שנבנית סביב מי שהוא. דקה אחת, בלי להתקין כלום.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
@@ -37,6 +37,9 @@ a{color:var(--primary);text-decoration:none}
 .hero h1{font-size:clamp(28px,7.4vw,44px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
 .hero h1 .hl{color:var(--primary)}
 .hero-sub{font-size:clamp(16px,4.2vw,20px);font-weight:700;line-height:1.6;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto 26px}
+.hero-more{margin-top:22px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--primary-light)}
+.hero-more a{color:var(--primary-light);border-bottom:1.5px solid rgba(146,220,226,.5)}
+.hero-more svg{width:16px;height:16px}
 .deco{position:absolute;pointer-events:none;opacity:.22}
 .deco-pom{width:120px;top:-8px;left:-18px;transform:rotate(-12deg)}
 .deco-honey{width:74px;bottom:-6px;right:14px}
@@ -110,12 +113,23 @@ a{color:var(--primary);text-decoration:none}
   </svg>
   <div class="container">
     <img class="logo" src="assets/logo-dark-bg.png" alt="נעם AI">
-    <span class="eyebrow-mono">ROSH HASHANA</span>
-    <h1>שנה טובה לכל הצופים.<br><span class="hl">ומתנה קטנה ממני.</span></h1>
-    <p class="hero-sub">ברכה אישית למי שאתם אוהבים.</p>
-    <a class="btn-cta" href="#steps">יאללה, קדימה להוראות
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
+    <div id="heroDefault">
+      <span class="eyebrow-mono">ROSH HASHANA</span>
+      <h1>שנה טובה לכל הצופים.<br><span class="hl">ומתנה קטנה ממני.</span></h1>
+      <p class="hero-sub">ברכה אישית למי שאתם אוהבים.</p>
+      <a class="btn-cta" href="#steps">יאללה, קדימה להוראות
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+    <div id="heroFrom" hidden>
+      <span class="eyebrow-mono">ROSH HASHANA</span>
+      <h1>היי.<br><span class="hl">שנה טובה.</span></h1>
+      <p class="hero-sub">שמעתי שאתם עדיין לא רשומים לסטטוס של נעם AI.<br>יש מצב???</p>
+      <a class="btn-cta" href="https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI">יאללה, מצטרפים לסטטוס</a>
+      <p class="hero-more"><a href="#steps">נעבור לתכלס? איך בונים ברכה כזאת בעצמכם</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -131,9 +145,9 @@ a{color:var(--primary);text-decoration:none}
       <div class="step"><span class="step-num">01</span>
         <div class="card">
           <h3>למי הברכה?</h3>
-          <p>שם, ודבר אחד שהוא אוהב. הפרומפט נבנה לבד.</p>
+          <p>שם, ומשפט אחד שמתאר אותו. הפרומפט נבנה לבד.</p>
           <div class="field"><label for="nm">השם שלו או שלה</label><input id="nm" type="text" placeholder="לדוגמה: יוסי" autocomplete="off"></div>
-          <div class="field"><label for="lv">דבר אחד שהוא אוהב</label><input id="lv" type="text" placeholder="קפה, כדורגל, לישון, טיסות..." autocomplete="off"></div>
+          <div class="field"><label for="lv">משפט אחד שמתאר אותו (משהו שהוא אוהב, חלום, מה שמאפיין אותו)</label><input id="lv" type="text" placeholder="לדוגמה: חולה על קפה וחולם לפתוח בית קפה" autocomplete="off"></div>
           <div class="act"><button class="btn-cta off" id="copyBtn" type="button">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
             העתקת הפרומפט</button></div>
@@ -167,7 +181,7 @@ a{color:var(--primary);text-decoration:none}
       <div class="step"><span class="step-num">04</span>
         <div class="card">
           <h3>מדביקים, ושולחים</h3>
-          <p>לחיצה ארוכה בתיבה, "הדבק", ושולחים. השם והדבר כבר בפנים.</p>
+          <p>לחיצה ארוכה בתיבה, "הדבק", ושולחים. השם והמשפט כבר בפנים.</p>
           <details class="more" id="more4" hidden><summary>הוראות מפורטות עם תמונות</summary>
             <div class="body">
               <p>מחכים בערך דקה. ג'מיני מצייר, בונה, ומציג את הברכה ישר על המסך. אפשר ללחוץ ולנסות.</p>
@@ -200,23 +214,23 @@ a{color:var(--primary);text-decoration:none}
     <p class="after">יצא לכם משהו טוב? שתפו אותי.</p>
 
     <p class="note"><b>שימו לב:</b> יש טלפונים שבהם, לצערי, הברכה לא תיפתח בצורה טובה.<br>(אבל העיקר הכוונה...)</p>
-    <pre id="prompt" hidden>תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
+    <pre id="prompt" hidden>תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם שלו ומשפט אחד שמתאר אותו בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
 
-הרעיון: הדבר שהוא אוהב הוא הכוכב, לא הברכה. תמציא סצנה מקורית שבה הדבר במרכז, והחבר חייב לעשות איתו פעולה (ללחוץ, לגרור, לנער, לגרד). בלי הפעולה שלו לא קורה כלום. אחרי הפעולה מהלך של כמה שניות: דברים זזים, נופלים, נבנים, מתפרקים, לפי מה שמתאים לדבר. הברכה נחשפת רק בסוף, בדרך מעניינת, והסצנה ממשיכה לחיות מאחוריה.
+הרעיון: המשפט עליו הוא הכוכב, לא הברכה. תוציא מהמשפט את הדבר הכי ויזואלי וחזק (משהו שהוא אוהב, חלום שלו, מה שמאפיין אותו), ותמציא סביבו סצנה מקורית שבה הדבר הזה במרכז, והחבר חייב לעשות איתו פעולה (ללחוץ, לגרור, לנער, לגרד). בלי הפעולה שלו לא קורה כלום. אחרי הפעולה מהלך של כמה שניות: דברים זזים, נופלים, נבנים, מתפרקים, לפי מה שמתאים. הברכה נחשפת רק בסוף, בדרך מעניינת, והסצנה ממשיכה לחיות מאחוריה.
 
-אל תחסוך: לפחות ארבעה או חמישה דברים שזזים, פרטים ברקע, דמות או חפץ עם אופי, בדיחה ויזואלית אחת לפחות, הפתעות שרואים רק בפעם השנייה. אל תלך על הרעיון הראשון. מה הדבר הכי חמוד ומצחיק שיכול לקרות לדבר הזה? מה יגרום לו לשלוח לאשתו?
+אל תחסוך: לפחות ארבעה או חמישה דברים שזזים, פרטים ברקע, דמות או חפץ עם אופי, בדיחה ויזואלית אחת לפחות, הפתעות שרואים רק בפעם השנייה. אל תלך על הרעיון הראשון. מה הדבר הכי חמוד ומצחיק שיכול לקרות פה? מה יגרום לו לשלוח לאשתו?
 
-איור: הכל SVG שאתה מצייר, עם צל, פרטים ותנועה עדינה עוד לפני שנוגעים. איור, לא אייקון. אסור אימוג'י. כל מה שזז קשור רק לדבר שהוא אוהב. ראש השנה רק בפינה: תפוח קטן או טיפת דבש, סטטי. לא תפוחים שנופלים. בלי שופר ובלי סמלים דתיים.
+איור: הכל SVG שאתה מצייר, עם צל, פרטים ותנועה עדינה עוד לפני שנוגעים. איור, לא אייקון. אסור אימוג'י. כל מה שזז קשור רק למשפט עליו. ראש השנה רק בפינה: תפוח קטן או טיפת דבש, סטטי. לא תפוחים שנופלים. בלי שופר ובלי סמלים דתיים.
 
-הברכה: 2 עד 3 שורות, עברית פשוטה, בלי קלישאות, עם השם שלו. בכרטיס חצי שקוף עם מסגרת דקה ופינות מעוגלות, ריווח פנימי 22, רוחב עד 80 אחוז. הכרטיס צף במרכז המסך ממש, לרוחב ולגובה: position fixed, top 50%, left 50%, transform translate(-50%,-50%), מעל הכל. לא למטה. פונט Heebo, ברכה 17 עד 19 פיקסלים, גובה שורה 1.7, השם עד 26.
+הברכה: 2 עד 3 שורות, עברית פשוטה, בלי קלישאות, עם השם שלו ועם רמז למשפט. בכרטיס חצי שקוף עם מסגרת דקה ופינות מעוגלות, ריווח פנימי 22, רוחב עד 80 אחוז. הכרטיס צף במרכז המסך ממש, לרוחב ולגובה: position fixed, top 50%, left 50%, transform translate(-50%,-50%), מעל הכל. לא למטה. פונט Heebo, ברכה 17 עד 19 פיקסלים, גובה שורה 1.7, השם עד 26.
 
-טלפון בלבד: מסך 390 פיקסלים, הכל באחוזים, בלי גלילה, בלי הסתרות. אוויר: 28 פיקסלים לפחות בין הסצנה לברכה ובין הברכה לסטטוס.
+טלפון בלבד: מסך 390 פיקסלים, הכל באחוזים, בלי גלילה, בלי הסתרות. אוויר: 28 פיקסלים לפחות בין הסצנה לברכה ובין הברכה לחלק התחתון.
 
-למטה, קטן ושקט: "הברכה נבנתה עם AI, בעזרת נעם AI. אהבת? שתף." (12 פיקסלים, אפור). שורה עד 10 מילים (13 פיקסלים) שפונה אליו דרך הדבר שהוא אוהב ואומרת למה כדאי לעקוב אחרי הסטטוס של נעם AI, בלי "מטורף" ו"בענק". כפתור "לחץ כאן למעקב בסטטוס" ל-https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI, צנוע: 14 פיקסלים, לא על כל הרוחב, מהבהב בעדינות, אחרי 20 שניות גדל מעט.
+למטה, קטן ושקט: "הברכה נבנתה עם AI, בעזרת נעם AI." (12 פיקסלים, אפור). שורה עד 10 מילים (13 פיקסלים) שפונה אליו דרך המשפט שלו ואומרת שבסטטוס של נעם AI לומדים לעשות דברים כאלה, בלי "מטורף" ו"בענק". כפתור "רוצה לברך גם מישהו? לחץ כאן" ל-https://noam-gever.github.io/shana-tova/?from=greeting, צנוע: 14 פיקסלים, לא על כל הרוחב, מהבהב בעדינות, אחרי 20 שניות גדל מעט.
 
 כללים: עברית מימין לשמאל. בלי תמונות חיצוניות, בלי ספריות. לפני הסצנה הוראה עד 5 מילים. לא לשאול, תמציא ותבנה.
 
-השם שלו: [כאן השם] · הדבר שהוא הכי אוהב: [כאן הדבר]</pre>
+השם שלו: [כאן השם] · משפט אחד עליו: [כאן המשפט]</pre>
   </div>
 </section>
 
@@ -238,7 +252,7 @@ a{color:var(--primary);text-decoration:none}
 (function(){
   var base=document.getElementById('prompt').textContent;
   var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint'),nm=document.getElementById('nm'),lv=document.getElementById('lv');
-  function build(){return base.replace('[כאן השם]',nm.value.trim()).replace('[כאן הדבר]',lv.value.trim());}
+  function build(){return base.replace('[כאן השם]',nm.value.trim()).replace('[כאן המשפט]',lv.value.trim());}
   function ready(){var r=nm.value.trim()&&lv.value.trim();btn.classList.toggle('off',!r);return r;}
   nm.addEventListener('input',ready);lv.addEventListener('input',ready);
   function ok(){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! ממשיכים לצעד 2';btn.classList.add('done');hint.className='hint';hint.textContent='הפרומפט של '+nm.value.trim()+' אצלכם.';}
@@ -249,10 +263,11 @@ a{color:var(--primary);text-decoration:none}
     if(done){ok();}else{var pre=document.getElementById('prompt');pre.textContent=text;pre.hidden=false;pre.style.cssText='white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #e4e3d4;border-radius:16px;padding:18px;font-family:inherit;font-size:14px;line-height:1.7;margin-top:18px;color:#2e565e;text-align:right';hint.className='hint err';hint.textContent='לא הצלחנו להעתיק אוטומטית. הטקסט למטה: לחיצה ארוכה, בחר הכל, העתק.';}
   }
   btn.addEventListener('click',function(){
-    if(!ready()){hint.className='hint err';hint.textContent=!nm.value.trim()?'רגע, איך קוראים לו?':'ודבר אחד שהוא אוהב?';(!nm.value.trim()?nm:lv).focus();return;}
+    if(!ready()){hint.className='hint err';hint.textContent=!nm.value.trim()?'רגע, איך קוראים לו?':'ומשפט אחד עליו?';(!nm.value.trim()?nm:lv).focus();return;}
     var text=build();
     if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,function(){fallback(text)});}else{fallback(text);}
   });
+  try{if(new URLSearchParams(location.search).get('from')==='greeting'){document.getElementById('heroDefault').hidden=true;document.getElementById('heroFrom').hidden=false;}}catch(e){}
   var steps=document.querySelectorAll('.step');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});steps.forEach(function(s){io.observe(s)});}
   else{steps.forEach(function(s){s.classList.add('in')});}
