@@ -4,153 +4,155 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>שנה טובה | נעם AI</title>
-<meta name="description" content="מתנה לראש השנה: פרומפט שבונה ברכה אינטראקטיבית סביב מה שהחבר שלכם אוהב. דקה אחת, בלי להתקין כלום.">
+<meta name="description" content="מתנה לראש השנה: ברכה אישית למי שאתם אוהבים, שנבנית סביב מה שהוא אוהב. דקה אחת, בלי להתקין כלום.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="נעם AI">
 <meta property="og:locale" content="he_IL">
 <meta property="og:url" content="https://noam-gever.github.io/shana-tova/">
-<meta property="og:title" content="שנה טובה. ומתנה קטנה ממני.">
-<meta property="og:description" content="פרומפט שבונה ברכה אינטראקטיבית סביב מה שהחבר שלכם אוהב. דקה אחת, בלי להתקין כלום.">
+<meta property="og:title" content="שנה טובה לכל הצופים. ומתנה קטנה ממני.">
+<meta property="og:description" content="ברכה אישית למי שאתם אוהבים, שנבנית סביב מה שהוא אוהב. דקה אחת, בלי להתקין כלום.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#1fb8cd;--primary-dark:#114f56;--primary-light:#92dce2;--primary-50:#edf9fb;--mint:#badedd;--mint-100:#e6f6f8;--signal:#bf505c;--space:#13343b;--navy-mid:#1a6872;--ink:#13343b;--ink-60:#2e565e;--border:#e4e3d4;--paper:#fbfaf4;--white:#fff;--font-he:"Heebo",-apple-system,sans-serif;--font-mono:"Space Mono",monospace}
+:root{--primary:#1fb8cd;--primary-dark:#114f56;--primary-light:#92dce2;--primary-50:#edf9fb;--mint:#badedd;--mint-100:#e6f6f8;--space:#13343b;--ink:#13343b;--ink-60:#2e565e;--border:#e4e3d4;--paper:#fbfaf4;--white:#fff;--font-he:"Heebo",-apple-system,sans-serif;--font-mono:"Space Mono",monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-he);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;direction:rtl;overflow-x:hidden}
 a{color:var(--primary);text-decoration:none}
-.container{max-width:640px;margin:0 auto;padding:0 22px}
-.eyebrow-mono{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-light);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.container{max-width:720px;margin:0 auto;padding:0 18px}
+.eyebrow-mono{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-light);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
 .eyebrow-mono::before,.eyebrow-mono::after{content:"";width:24px;height:1px;background:currentColor;opacity:.45}
 .section-light .eyebrow-mono{color:var(--primary-dark)}
-/* HERO */
-.hero{background:var(--space);padding:56px 22px 60px;position:relative;overflow:hidden;text-align:center;color:var(--white)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(31,184,205,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.07) 1px,transparent 1px);background-size:60px 60px}
-.hero-glow{position:absolute;top:-220px;right:-140px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(31,184,205,.25) 0%,transparent 65%);pointer-events:none}
-.hero-glow2{position:absolute;bottom:-180px;left:-60px;width:420px;height:420px;background:radial-gradient(ellipse,rgba(186,222,221,.12) 0%,transparent 65%);pointer-events:none}
-.hero .container{position:relative;z-index:2}
-.logo{height:46px;width:auto;margin:0 auto 30px;display:block;opacity:.95}
-.hero h1{font-size:clamp(32px,8vw,50px);font-weight:900;line-height:1.18;letter-spacing:-.02em;margin-bottom:16px}
-.hero h1 .hl{color:var(--primary)}
-.hero-sub{font-size:clamp(17px,4.2vw,21px);font-weight:700;line-height:1.6;color:#fff;max-width:520px;margin:0 auto 12px}
-.hero-desc{font-size:15px;line-height:1.85;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto 34px}
-.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-he);font-weight:800;font-size:clamp(17px,4.5vw,20px);line-height:1.3;padding:19px 34px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;background:var(--primary);color:var(--white);box-shadow:0 4px 24px rgba(31,184,205,.3);width:100%;max-width:420px}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-he);font-weight:800;font-size:clamp(16px,4.3vw,19px);line-height:1.3;padding:17px 30px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;background:var(--primary);color:var(--white);box-shadow:0 4px 24px rgba(31,184,205,.3);width:100%;max-width:380px}
 .btn-cta:active{transform:translateY(1px)}
 .btn-cta.done{background:#2f9e6d;box-shadow:0 4px 24px rgba(47,158,109,.35)}
 .btn-cta svg{width:22px;height:22px;flex:none}
-.copy-hint{font-size:13px;color:rgba(255,255,255,.5);margin-top:12px;min-height:20px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:30px}
-.hero-tag{font-size:12px;font-weight:600;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:100px}
-/* VIDEO */
-.video-wrap{display:none;margin:0 auto 40px;max-width:640px}
-.video-wrap.on{display:block}
-.video-frame{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid rgba(31,184,205,.25);box-shadow:0 20px 44px rgba(19,52,59,.1);background:#000}
-.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-/* STEPS */
-.section-light{position:relative;padding:60px 22px 70px;background:linear-gradient(180deg,var(--paper) 0%,var(--mint-100) 45%,var(--paper) 100%)}
+/* HERO קטן */
+.hero{background:var(--space);padding:34px 18px 40px;position:relative;overflow:hidden;text-align:center;color:var(--white)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(31,184,205,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.07) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:-260px;right:-160px;width:560px;height:560px;background:radial-gradient(ellipse,rgba(31,184,205,.24) 0%,transparent 65%);pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.logo{height:40px;width:auto;margin:0 auto 20px;display:block;opacity:.95}
+.hero h1{font-size:clamp(28px,7.4vw,44px);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+.hero h1 .hl{color:var(--primary)}
+.hero-sub{font-size:clamp(16px,4.2vw,20px);font-weight:700;line-height:1.6;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto 26px}
+.deco{position:absolute;pointer-events:none;opacity:.22}
+.deco-pom{width:120px;top:-8px;left:-18px;transform:rotate(-12deg)}
+.deco-honey{width:74px;bottom:-6px;right:14px}
+/* צעדים */
+.section-light{position:relative;padding:52px 0 60px;background:linear-gradient(180deg,var(--paper) 0%,var(--mint-100) 45%,var(--paper) 100%)}
 .section-light::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(31,184,205,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.045) 1px,transparent 1px);background-size:52px 52px}
 .section-light .container{position:relative;z-index:1}
-.sec-head{text-align:center;margin-bottom:34px}
-.sec-title{font-size:clamp(24px,6vw,34px);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:10px}
+.sec-head{text-align:center;margin-bottom:26px}
+.sec-title{font-size:clamp(24px,6vw,34px);font-weight:900;line-height:1.3;letter-spacing:-.02em}
 .sec-title .prog{color:var(--primary-dark);background-image:linear-gradient(180deg,transparent 78%,rgba(31,184,205,.3) 78%,rgba(31,184,205,.14) 100%)}
-.sec-desc{font-size:15.5px;line-height:1.8;color:var(--ink-60)}
-.rule{width:56px;height:3px;margin:0 auto 18px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary-light),transparent)}
-.steps{display:flex;flex-direction:column;gap:14px}
-.step{position:relative;overflow:hidden;background:var(--white);border:1px solid rgba(31,184,205,.16);border-radius:20px;padding:22px 22px 20px;box-shadow:0 2px 18px rgba(19,52,59,.05)}
-.step::after{content:"";position:absolute;inset-inline-end:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 45%,transparent 100%)}
-.step-top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
-.step-num{font-family:var(--font-mono);font-weight:700;font-size:13px;width:40px;height:40px;flex:none;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(31,184,205,.16),rgba(31,184,205,.05));border:1px solid rgba(31,184,205,.24);color:var(--primary-dark)}
-.step h3{font-size:18.5px;font-weight:800;line-height:1.35;letter-spacing:-.01em}
-.step p{font-size:14.5px;line-height:1.8;color:var(--ink-60);padding-inline-start:54px}
-.step p a{font-weight:700;color:var(--primary-dark);border-bottom:2px solid rgba(31,184,205,.4)}
-.step .mini{display:inline-flex;align-items:center;gap:8px;margin:12px 0 0 0;margin-inline-start:54px;font-weight:800;font-size:14px;padding:10px 16px;border-radius:10px;border:1.5px solid var(--primary);color:var(--primary-dark);background:var(--primary-50);cursor:pointer;font-family:inherit}
-.shot{display:none;margin:16px 0 4px 0;margin-inline-start:0;border-radius:14px;border:1px solid var(--border);width:100%;box-shadow:0 8px 24px rgba(19,52,59,.08)}
+.rule{width:56px;height:3px;margin:0 auto 16px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary-light),transparent)}
+/* כרטיסיות שנערמות */
+.steps{--top:14px}
+.step{position:sticky;top:calc(var(--top) + var(--i) * 14px);margin-bottom:22px;background:var(--white);border:1px solid rgba(31,184,205,.2);border-radius:22px;padding:22px 20px 24px;box-shadow:0 -6px 30px rgba(19,52,59,.08),0 12px 34px rgba(19,52,59,.08);min-height:200px}
+.step::after{content:"";position:absolute;inset-inline-end:0;top:0;width:4px;height:100%;border-radius:0 22px 22px 0;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 45%,transparent 100%)}
+.step-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.step-num{font-family:var(--font-mono);font-weight:700;font-size:13px;width:44px;height:44px;flex:none;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(31,184,205,.16),rgba(31,184,205,.05));border:1px solid rgba(31,184,205,.24);color:var(--primary-dark)}
+.step h3{font-size:clamp(19px,5vw,23px);font-weight:800;line-height:1.3;letter-spacing:-.01em}
+.step p{font-size:15.5px;line-height:1.8;color:var(--ink-60)}
+.step .act{margin-top:16px;display:flex;justify-content:center}
+.step .act .btn-cta{max-width:100%}
+.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:17px;padding:15px 26px;border-radius:14px;border:2px solid var(--primary);color:var(--primary-dark);background:var(--primary-50);width:100%}
+.shot{display:none;margin-top:16px;border-radius:14px;border:1px solid var(--border);width:100%;box-shadow:0 8px 24px rgba(19,52,59,.08)}
 .shot.on{display:block}
-.kicker{margin:34px auto 0;text-align:center;font-size:14.5px;font-weight:600;line-height:1.75;color:var(--primary-dark);padding:16px 20px;background:var(--primary-50);border:1px solid rgba(31,184,205,.22);border-radius:16px}
-/* PROMPT */
-details{margin-top:28px}
-summary{cursor:pointer;color:var(--ink-60);font-size:14px;text-align:center;list-style:none;font-weight:600}
-summary::-webkit-details-marker{display:none}
-summary span{border-bottom:1.5px solid rgba(31,184,205,.5)}
-pre{white-space:pre-wrap;word-break:break-word;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px;font-family:var(--font-he);font-size:14px;line-height:1.7;margin-top:14px;direction:rtl;text-align:right;color:var(--ink-60)}
-/* FOOTER */
-.foot{background:linear-gradient(135deg,var(--space) 0%,#114f56 100%);color:#fff;padding:54px 22px 46px;text-align:center;position:relative;overflow:hidden}
+.gallery{display:none;margin-top:16px;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.gallery.on{display:flex}
+.gallery img{flex:0 0 78%;scroll-snap-align:start;border-radius:14px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(19,52,59,.08)}
+.gallery img:not(.on){display:none}
+.after{position:relative;z-index:2;margin:28px auto 0;text-align:center;font-size:16px;font-weight:700;line-height:1.7;color:var(--primary-dark);padding:18px 20px;background:var(--white);border:1px solid rgba(31,184,205,.22);border-radius:16px}
+/* פוטר */
+.foot{background:linear-gradient(135deg,var(--space) 0%,#114f56 100%);color:#fff;padding:54px 18px 46px;text-align:center;position:relative;overflow:hidden}
 .foot::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(31,184,205,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.06) 1px,transparent 1px);background-size:44px 44px}
 .foot .container{position:relative;z-index:1}
-.foot h2{font-size:clamp(21px,5.5vw,28px);font-weight:900;line-height:1.35;margin-bottom:10px}
-.foot p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:24px}
-.foot .btn-cta{max-width:360px}
-.foot small{display:block;margin-top:30px;font-size:12px;color:rgba(255,255,255,.3)}
+.foot h2{font-size:clamp(22px,5.8vw,30px);font-weight:900;line-height:1.35;margin-bottom:10px}
+.foot p{font-size:15.5px;line-height:1.8;color:rgba(255,255,255,.55);margin:0 auto 24px;max-width:440px}
+.foot small{display:block;margin-top:28px;font-size:12px;color:rgba(255,255,255,.3)}
+.deco-apple{width:64px;bottom:10px;left:16px;opacity:.16}
 </style>
 </head>
 <body>
 
 <section class="hero">
-  <div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-grid"></div><div class="hero-glow"></div>
+  <!-- רימון בקו, קטן ושקוף -->
+  <svg class="deco deco-pom" viewBox="0 0 120 130" fill="none" stroke="#92dce2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M60 118c-28 0-44-19-44-44 0-20 14-36 30-42 9-4 19-4 28 0 16 6 30 22 30 42 0 25-16 44-44 44z"/>
+    <path d="M47 32l-4-14h34l-4 14M52 18l-2-8M60 17l0-9M68 18l2-8"/>
+    <circle cx="48" cy="70" r="5"/><circle cx="62" cy="62" r="5"/><circle cx="74" cy="76" r="5"/><circle cx="58" cy="86" r="5"/><circle cx="44" cy="92" r="4"/><circle cx="76" cy="94" r="4"/>
+  </svg>
+  <!-- טיפת דבש -->
+  <svg class="deco deco-honey" viewBox="0 0 80 100" fill="none" stroke="#92dce2" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+    <path d="M40 8c0 0-24 30-24 50a24 24 0 0 0 48 0C64 38 40 8 40 8z"/>
+    <path d="M28 62a12 12 0 0 0 10 12"/>
+  </svg>
   <div class="container">
     <img class="logo" src="assets/logo-dark-bg.png" alt="נעם AI">
-    <span class="eyebrow-mono">ROSH HASHANA GIFT</span>
-    <h1>שנה טובה.<br><span class="hl">ומתנה קטנה ממני.</span></h1>
-    <p class="hero-sub">ברכה שנבנית סביב מה שהחבר שלכם אוהב.<br>הוא לוחץ, משהו קורה, ורק אז הברכה יוצאת.</p>
-    <p class="hero-desc">לוקח דקה. בלי להתקין כלום, בלי להירשם לכלום. מעתיקים פרומפט אחד, מדביקים בג'מיני, ומקבלים קישור לשלוח בוואטסאפ.</p>
-    <button class="btn-cta" id="copyBtn" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
-      העתקת הפרומפט
-    </button>
-    <p class="copy-hint" id="hint">לחיצה אחת, וזה מועתק.</p>
-    <div class="hero-tags"><span class="hero-tag">דקה אחת</span><span class="hero-tag">בלי התקנה</span><span class="hero-tag">בחינם</span></div>
+    <span class="eyebrow-mono">ROSH HASHANA</span>
+    <h1>שנה טובה לכל הצופים.<br><span class="hl">ומתנה קטנה ממני.</span></h1>
+    <p class="hero-sub">ברכה אישית למי שאתם אוהבים.</p>
+    <a class="btn-cta" href="#steps">יאללה, קדימה להוראות
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
   </div>
 </section>
 
-<section class="section-light">
+<section class="section-light" id="steps">
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow-mono">HOW TO</span>
       <div class="rule"></div>
-      <h2 class="sec-title">"אוקיי נעם, <span class="prog">מה עושים</span> עם זה?"</h2>
-      <p class="sec-desc">חמישה צעדים. לוקח דקה.</p>
-    </div>
-
-    <!-- סרטון הדרכה: לשים מזהה יוטיוב ב-data-video, והוא מופיע לבד -->
-    <div class="video-wrap" id="videoWrap" data-video="">
-      <div class="video-frame"><iframe id="videoFrame" title="סרטון הדרכה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <h2 class="sec-title">"אוקיי נעם, <span class="prog">מה עושים</span> פה?"</h2>
     </div>
 
     <div class="steps">
-      <div class="step">
+      <div class="step" style="--i:0">
         <div class="step-top"><span class="step-num">01</span><h3>מעתיקים את הפרומפט</h3></div>
-        <p>הכפתור למעלה. לחיצה אחת, וזה בזיכרון של הטלפון.</p>
-        <button class="mini" type="button" data-copy>העתקה שוב</button>
-        <img class="shot" src="assets/step-1.png" alt="" onload="this.classList.add('on')">
+        <p>לחיצה אחת, וזה בזיכרון של הטלפון. לא צריך לקרוא אותו, לא צריך להבין אותו.</p>
+        <div class="act"><button class="btn-cta" id="copyBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
+          העתקת הפרומפט</button></div>
+        <p id="hint" style="text-align:center;font-size:13.5px;margin-top:10px;min-height:20px"></p>
       </div>
-      <div class="step">
+
+      <div class="step" style="--i:1">
         <div class="step-top"><span class="step-num">02</span><h3>נכנסים לג'מיני</h3></div>
-        <p>באפליקציה, או כאן: <a href="https://gemini.google.com/app" target="_blank" rel="noopener">gemini.google.com</a></p>
+        <p>באפליקציה של Gemini בטלפון, או דרך הכפתור:</p>
+        <div class="act"><a class="btn-ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a></div>
         <img class="shot" src="assets/step-2.png" alt="" onload="this.classList.add('on')">
       </div>
-      <div class="step">
+
+      <div class="step" style="--i:2">
         <div class="step-top"><span class="step-num">03</span><h3>לוחצים על מצב Pro ועל Canvas</h3></div>
         <p>שניהם מתחת לתיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
         <img class="shot" src="assets/step-3.png" alt="" onload="this.classList.add('on')">
       </div>
-      <div class="step">
+
+      <div class="step" style="--i:3">
         <div class="step-top"><span class="step-num">04</span><h3>מדביקים, ומשנים את הסוף</h3></div>
-        <p>בשורה האחרונה של הפרומפט מחליפים את השם ואת הדבר שהוא אוהב. שולחים, ומחכים שג'מיני יבנה.</p>
+        <p>בשורה האחרונה של הפרומפט מחליפים את השם ואת הדבר שהאדם אוהב. שולחים, ומחכים דקה שג'מיני יבנה.</p>
         <img class="shot" src="assets/step-4.png" alt="" onload="this.classList.add('on')">
       </div>
-      <div class="step">
-        <div class="step-top"><span class="step-num">05</span><h3>שיתוף, ושולחים לחבר</h3></div>
-        <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. החבר פותח בלי חשבון ובלי כלום.</p>
-        <img class="shot" src="assets/step-5.png" alt="" onload="this.classList.add('on')">
+
+      <div class="step" style="--i:4">
+        <div class="step-top"><span class="step-num">05</span><h3>שיתוף, ושולחים למי שאוהבים</h3></div>
+        <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. מי שמקבל פותח בלי חשבון ובלי כלום.</p>
+        <div class="gallery" id="gallery">
+          <img src="assets/step-5a.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+          <img src="assets/step-5b.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+          <img src="assets/step-5c.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+          <img src="assets/step-5d.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+        </div>
       </div>
     </div>
 
-    <p class="kicker">יצא לכם משהו טוב? תשלחו לי. אני אוהב לראות מה יוצא לאנשים.</p>
-
-    <details>
-      <summary><span>לראות את הפרומפט המלא</span></summary>
-      <pre id="prompt">תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
+    <p class="after">יצא לכם משהו טוב? שתפו אותי.</p>
+    <pre id="prompt" hidden>תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
 
 לטלפון בלבד:
 העמוד נפתח רק בטלפון, במסך צר ואנכי (390 פיקסלים רוחב). מחשב לא מעניין. הכל נמדד באחוזים מהמסך, שום דבר לא ברוחב קבוע. הסצנה, הברכה והכפתור נכנסים כולם במסך אחד בלי גלילה ובלי שדבר מסתיר דבר. פונט גדול, כפתור שאפשר ללחוץ עם אגודל.
@@ -174,36 +176,35 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--white);border:1p
 לפני הסצנה: הוראה אחת עד 5 מילים, רק מה לעשות. בלי תמונות חיצוניות. לא לשאול שאלות, תמציא ותבנה.
 
 השם שלו: [כאן השם] · הדבר שהוא הכי אוהב: [כאן הדבר]</pre>
-    </details>
   </div>
 </section>
 
 <section class="foot">
   <div class="container">
     <span class="eyebrow-mono">NOAM AI</span>
-    <h2>רוצים ללמוד לעשות דברים כאלה?</h2>
-    <p>בסטטוס אני מראה כל יום משהו קטן עם AI. בלי הייטק, בלי מילים גדולות.</p>
+    <h2>עדיין לא רשומים לסטטוס?</h2>
+    <p>בואו תצטרפו לקראת השנה החדשה, ותלמדו בינה מלאכותית בקטנה, כל יום.</p>
     <a class="btn-cta" href="https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI">להצטרף לסטטוס של נעם AI</a>
     <small>שנה טובה ומתוקה. נעם.</small>
   </div>
+  <svg class="deco deco-apple" viewBox="0 0 80 80" fill="none" stroke="#92dce2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M40 24c-5-7-14-7-19-3-8 6-9 19-3 31 5 11 11 17 17 17 2 0 3-1 5-1s3 1 5 1c6 0 12-6 17-17 6-12 5-25-3-31-5-4-14-4-19 3z"/>
+    <path d="M40 24c0-5 2-9 5-12M43 15c5-5 12-4 15 0-4 4-10 5-15 0z"/>
+  </svg>
 </section>
 
 <script>
 (function(){
   var text=document.getElementById('prompt').textContent;
-  var main=document.getElementById('copyBtn'),hint=document.getElementById('hint');
-  function ok(btn){main.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! עכשיו לג\'מיני';main.classList.add('done');hint.textContent='הפרומפט אצלכם. ממשיכים לצעד 2.';if(btn&&btn!==main){btn.textContent='הועתק';}}
-  function fallback(btn){
+  var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint');
+  function ok(){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! ממשיכים לצעד 2';btn.classList.add('done');hint.textContent='';}
+  function fallback(){
     var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,text.length);
     var done=false;try{done=document.execCommand('copy');}catch(e){}
     document.body.removeChild(ta);
-    if(done){ok(btn);}else{hint.textContent='לא הצלחנו להעתיק אוטומטית. למטה, "לראות את הפרומפט המלא": לחיצה ארוכה, בחר הכל, העתק.';document.querySelector('details').open=true;document.querySelector('details').scrollIntoView({behavior:'smooth'});}
+    if(done){ok();}else{var pre=document.getElementById('prompt');pre.hidden=false;pre.style.cssText='white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #e4e3d4;border-radius:16px;padding:18px;font-family:inherit;font-size:14px;line-height:1.7;margin-top:18px;color:#2e565e;text-align:right';hint.textContent='לא הצלחנו להעתיק אוטומטית. הטקסט למטה: לחיצה ארוכה, בחר הכל, העתק.';}
   }
-  function copy(btn){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){ok(btn)},function(){fallback(btn)});}else{fallback(btn);}}
-  main.addEventListener('click',function(){copy(main)});
-  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b)})});
-  var vw=document.getElementById('videoWrap'),id=vw.getAttribute('data-video');
-  if(id){document.getElementById('videoFrame').src='https://www.youtube.com/embed/'+id;vw.classList.add('on');}
+  btn.addEventListener('click',function(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback);}else{fallback();}});
 })();
 </script>
 </body>
