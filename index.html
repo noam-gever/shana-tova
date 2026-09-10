@@ -3,63 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>שנה טובה מנעם AI</title>
-<meta name="description" content="מתנה לראש השנה: פרומפט שבונה ברכה אינטראקטיבית לחבר">
+<title>שנה טובה | נעם AI</title>
+<meta name="description" content="מתנה לראש השנה: פרומפט שבונה ברכה אינטראקטיבית סביב מה שהחבר שלכם אוהב. דקה אחת, בלי להתקין כלום.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="נעם AI">
+<meta property="og:locale" content="he_IL">
+<meta property="og:url" content="https://noam-gever.github.io/shana-tova/">
+<meta property="og:title" content="שנה טובה. ומתנה קטנה ממני.">
+<meta property="og:description" content="פרומפט שבונה ברכה אינטראקטיבית סביב מה שהחבר שלכם אוהב. דקה אחת, בלי להתקין כלום.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root{--cream:#fff7ea;--gold:#c9931a;--red:#b8322f;--ink:#2b1d12;--muted:#7a6552;--btn:#b8322f}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Rubik","Heebo","Assistant",-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
-  .wrap{max-width:520px;margin:0 auto;padding:28px 20px 60px}
-  header{text-align:center;margin-bottom:22px}
-  .apple{width:84px;height:84px;margin:0 auto 10px;display:block}
-  h1{font-size:1.7rem;margin:0 0 6px;font-weight:800}
-  .sub{color:var(--muted);margin:0;font-size:1.02rem}
-  .copy{display:block;width:100%;border:0;border-radius:18px;padding:20px 16px;font-size:1.35rem;font-weight:800;color:#fff;background:var(--btn);box-shadow:0 8px 24px rgba(184,50,47,.28);cursor:pointer;font-family:inherit;transition:transform .08s}
-  .copy:active{transform:scale(.98)}
-  .copy.done{background:#2e8b57;box-shadow:0 8px 24px rgba(46,139,87,.28)}
-  .hint{text-align:center;color:var(--muted);font-size:.92rem;margin:10px 0 26px}
-  ol{padding:0;margin:0;list-style:none;counter-reset:s}
-  li{position:relative;background:#fff;border:1px solid #f0e2c8;border-radius:16px;padding:16px 58px 16px 16px;margin-bottom:12px;font-size:1.05rem}
-  li::before{counter-increment:s;content:counter(s);position:absolute;right:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
-  li b{font-weight:700}
-  li small{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
-  .gem{display:block;text-align:center;margin:18px 0 0;padding:14px;border-radius:14px;background:#fff;border:2px solid var(--gold);color:var(--ink);font-weight:700;text-decoration:none;font-size:1.05rem}
-  details{margin-top:30px}
-  summary{cursor:pointer;color:var(--muted);font-size:.95rem;text-align:center;list-style:none}
-  summary::-webkit-details-marker{display:none}
-  pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #f0e2c8;border-radius:14px;padding:16px;font-family:inherit;font-size:.92rem;line-height:1.6;margin-top:12px;direction:rtl;text-align:right}
-  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.9rem}
-  footer a{color:var(--red);font-weight:700;text-decoration:none}
+:root{--primary:#1fb8cd;--primary-dark:#114f56;--primary-light:#92dce2;--primary-50:#edf9fb;--mint:#badedd;--mint-100:#e6f6f8;--signal:#bf505c;--space:#13343b;--navy-mid:#1a6872;--ink:#13343b;--ink-60:#2e565e;--border:#e4e3d4;--paper:#fbfaf4;--white:#fff;--font-he:"Heebo",-apple-system,sans-serif;--font-mono:"Space Mono",monospace}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-he);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;direction:rtl;overflow-x:hidden}
+a{color:var(--primary);text-decoration:none}
+.container{max-width:640px;margin:0 auto;padding:0 22px}
+.eyebrow-mono{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-light);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow-mono::before,.eyebrow-mono::after{content:"";width:24px;height:1px;background:currentColor;opacity:.45}
+.section-light .eyebrow-mono{color:var(--primary-dark)}
+/* HERO */
+.hero{background:var(--space);padding:56px 22px 60px;position:relative;overflow:hidden;text-align:center;color:var(--white)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(31,184,205,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.07) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:-220px;right:-140px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(31,184,205,.25) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-180px;left:-60px;width:420px;height:420px;background:radial-gradient(ellipse,rgba(186,222,221,.12) 0%,transparent 65%);pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.logo{height:38px;margin:0 auto 30px;display:block;opacity:.95}
+.hero h1{font-size:clamp(32px,8vw,50px);font-weight:900;line-height:1.18;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 .hl{color:var(--primary)}
+.hero-sub{font-size:clamp(17px,4.2vw,21px);font-weight:700;line-height:1.6;color:#fff;max-width:520px;margin:0 auto 12px}
+.hero-desc{font-size:15px;line-height:1.85;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto 34px}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-he);font-weight:800;font-size:clamp(17px,4.5vw,20px);line-height:1.3;padding:19px 34px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;background:var(--primary);color:var(--white);box-shadow:0 4px 24px rgba(31,184,205,.3);width:100%;max-width:420px}
+.btn-cta:active{transform:translateY(1px)}
+.btn-cta.done{background:#2f9e6d;box-shadow:0 4px 24px rgba(47,158,109,.35)}
+.btn-cta svg{width:22px;height:22px;flex:none}
+.copy-hint{font-size:13px;color:rgba(255,255,255,.5);margin-top:12px;min-height:20px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:30px}
+.hero-tag{font-size:12px;font-weight:600;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:7px 14px;border-radius:100px}
+/* VIDEO */
+.video-wrap{display:none;margin:0 auto 40px;max-width:640px}
+.video-wrap.on{display:block}
+.video-frame{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid rgba(31,184,205,.25);box-shadow:0 20px 44px rgba(19,52,59,.1);background:#000}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* STEPS */
+.section-light{position:relative;padding:60px 22px 70px;background:linear-gradient(180deg,var(--paper) 0%,var(--mint-100) 45%,var(--paper) 100%)}
+.section-light::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(31,184,205,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.045) 1px,transparent 1px);background-size:52px 52px}
+.section-light .container{position:relative;z-index:1}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-title{font-size:clamp(24px,6vw,34px);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:10px}
+.sec-title .prog{color:var(--primary-dark);background-image:linear-gradient(180deg,transparent 78%,rgba(31,184,205,.3) 78%,rgba(31,184,205,.14) 100%)}
+.sec-desc{font-size:15.5px;line-height:1.8;color:var(--ink-60)}
+.rule{width:56px;height:3px;margin:0 auto 18px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary-light),transparent)}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{position:relative;overflow:hidden;background:var(--white);border:1px solid rgba(31,184,205,.16);border-radius:20px;padding:22px 22px 20px;box-shadow:0 2px 18px rgba(19,52,59,.05)}
+.step::after{content:"";position:absolute;inset-inline-end:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 45%,transparent 100%)}
+.step-top{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.step-num{font-family:var(--font-mono);font-weight:700;font-size:13px;width:40px;height:40px;flex:none;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(31,184,205,.16),rgba(31,184,205,.05));border:1px solid rgba(31,184,205,.24);color:var(--primary-dark)}
+.step h3{font-size:18.5px;font-weight:800;line-height:1.35;letter-spacing:-.01em}
+.step p{font-size:14.5px;line-height:1.8;color:var(--ink-60);padding-inline-start:54px}
+.step p a{font-weight:700;color:var(--primary-dark);border-bottom:2px solid rgba(31,184,205,.4)}
+.step .mini{display:inline-flex;align-items:center;gap:8px;margin:12px 0 0 0;margin-inline-start:54px;font-weight:800;font-size:14px;padding:10px 16px;border-radius:10px;border:1.5px solid var(--primary);color:var(--primary-dark);background:var(--primary-50);cursor:pointer;font-family:inherit}
+.shot{display:none;margin:16px 0 4px 0;margin-inline-start:0;border-radius:14px;border:1px solid var(--border);width:100%;box-shadow:0 8px 24px rgba(19,52,59,.08)}
+.shot.on{display:block}
+.kicker{margin:34px auto 0;text-align:center;font-size:14.5px;font-weight:600;line-height:1.75;color:var(--primary-dark);padding:16px 20px;background:var(--primary-50);border:1px solid rgba(31,184,205,.22);border-radius:16px}
+/* PROMPT */
+details{margin-top:28px}
+summary{cursor:pointer;color:var(--ink-60);font-size:14px;text-align:center;list-style:none;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary span{border-bottom:1.5px solid rgba(31,184,205,.5)}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px;font-family:var(--font-he);font-size:14px;line-height:1.7;margin-top:14px;direction:rtl;text-align:right;color:var(--ink-60)}
+/* FOOTER */
+.foot{background:linear-gradient(135deg,var(--space) 0%,#114f56 100%);color:#fff;padding:54px 22px 46px;text-align:center;position:relative;overflow:hidden}
+.foot::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(31,184,205,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.06) 1px,transparent 1px);background-size:44px 44px}
+.foot .container{position:relative;z-index:1}
+.foot h2{font-size:clamp(21px,5.5vw,28px);font-weight:900;line-height:1.35;margin-bottom:10px}
+.foot p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.5);margin-bottom:24px}
+.foot .btn-cta{max-width:360px}
+.foot small{display:block;margin-top:30px;font-size:12px;color:rgba(255,255,255,.3)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <svg class="apple" viewBox="0 0 100 100" aria-hidden="true">
-      <path d="M50 22c-6-9-16-9-22-4-9 7-10 22-3 37 6 13 13 20 20 20 3 0 4-1 5-1s2 1 5 1c7 0 14-7 20-20 7-15 6-30-3-37-6-5-16-5-22 4z" fill="#c8302d"/>
-      <path d="M40 42c-4 6-4 14-1 21" stroke="#fff" stroke-opacity=".45" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M50 22c0-6 2-10 5-13" stroke="#5b3a1e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-      <path d="M53 17c6-6 14-5 17 0-5 5-12 6-17 0z" fill="#4e9a3f"/>
-      <path d="M62 44c3 3 4 8 4 12s-2 8-5 9c0-3-3-5-3-9s2-8 4-12z" fill="#f2b632"/>
-    </svg>
-    <h1>שנה טובה, מנעם AI</h1>
-    <p class="sub">מתנה קטנה: ברכה שנבנית סביב מה שהחבר שלכם אוהב.<br>לוקח דקה. בלי להתקין כלום.</p>
-  </header>
 
-  <button class="copy" id="copyBtn" type="button">העתקת הפרומפט</button>
-  <p class="hint" id="hint">לחיצה אחת, וזה מועתק. אחר כך שלושה צעדים:</p>
+<section class="hero">
+  <div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="container">
+    <img class="logo" src="assets/logo-white.png" alt="נעם AI">
+    <span class="eyebrow-mono">ROSH HASHANA GIFT</span>
+    <h1>שנה טובה.<br><span class="hl">ומתנה קטנה ממני.</span></h1>
+    <p class="hero-sub">ברכה שנבנית סביב מה שהחבר שלכם אוהב.<br>הוא לוחץ, משהו קורה, ורק אז הברכה יוצאת.</p>
+    <p class="hero-desc">לוקח דקה. בלי להתקין כלום, בלי להירשם לכלום. מעתיקים פרומפט אחד, מדביקים בג'מיני, ומקבלים קישור לשלוח בוואטסאפ.</p>
+    <button class="btn-cta" id="copyBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
+      העתקת הפרומפט
+    </button>
+    <p class="copy-hint" id="hint">לחיצה אחת, וזה מועתק.</p>
+    <div class="hero-tags"><span class="hero-tag">דקה אחת</span><span class="hero-tag">בלי התקנה</span><span class="hero-tag">בחינם</span></div>
+  </div>
+</section>
 
-  <ol>
-    <li><b>פותחים את ג'מיני</b> בטלפון.<br><small>אפליקציית Gemini, או gemini.google.com בדפדפן.</small></li>
-    <li><b>לוחצים על Canvas</b> לפני שמדביקים.<br><small>הכפתור נמצא מתחת לתיבת הכתיבה. בלי זה תקבלו קוד במקום אתר.</small></li>
-    <li><b>מדביקים</b>, ובשורה האחרונה מחליפים את השם ואת הדבר שהוא אוהב. שולחים.<br><small>כשמוכן: "שיתוף", מעתיקים קישור, ושולחים לחבר בוואטסאפ.</small></li>
-  </ol>
+<section class="section-light">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow-mono">HOW TO</span>
+      <div class="rule"></div>
+      <h2 class="sec-title">"אוקיי נעם, <span class="prog">מה עושים</span> עם זה?"</h2>
+      <p class="sec-desc">חמישה צעדים. לוקח דקה.</p>
+    </div>
 
-  <a class="gem" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a>
+    <!-- סרטון הדרכה: לשים מזהה יוטיוב ב-data-video, והוא מופיע לבד -->
+    <div class="video-wrap" id="videoWrap" data-video="">
+      <div class="video-frame"><iframe id="videoFrame" title="סרטון הדרכה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    </div>
 
-  <details>
-    <summary>לראות את הפרומפט המלא</summary>
-    <pre id="prompt">תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
+    <div class="steps">
+      <div class="step">
+        <div class="step-top"><span class="step-num">01</span><h3>מעתיקים את הפרומפט</h3></div>
+        <p>הכפתור למעלה. לחיצה אחת, וזה בזיכרון של הטלפון.</p>
+        <button class="mini" type="button" data-copy>העתקה שוב</button>
+        <img class="shot" src="assets/step-1.png" alt="" onload="this.classList.add('on')">
+      </div>
+      <div class="step">
+        <div class="step-top"><span class="step-num">02</span><h3>נכנסים לג'מיני</h3></div>
+        <p>באפליקציה, או כאן: <a href="https://gemini.google.com/app" target="_blank" rel="noopener">gemini.google.com</a></p>
+        <img class="shot" src="assets/step-2.png" alt="" onload="this.classList.add('on')">
+      </div>
+      <div class="step">
+        <div class="step-top"><span class="step-num">03</span><h3>לוחצים על מצב Pro ועל Canvas</h3></div>
+        <p>שניהם מתחת לתיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
+        <img class="shot" src="assets/step-3.png" alt="" onload="this.classList.add('on')">
+      </div>
+      <div class="step">
+        <div class="step-top"><span class="step-num">04</span><h3>מדביקים, ומשנים את הסוף</h3></div>
+        <p>בשורה האחרונה של הפרומפט מחליפים את השם ואת הדבר שהוא אוהב. שולחים, ומחכים שג'מיני יבנה.</p>
+        <img class="shot" src="assets/step-4.png" alt="" onload="this.classList.add('on')">
+      </div>
+      <div class="step">
+        <div class="step-top"><span class="step-num">05</span><h3>שיתוף, ושולחים לחבר</h3></div>
+        <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. החבר פותח בלי חשבון ובלי כלום.</p>
+        <img class="shot" src="assets/step-5.png" alt="" onload="this.classList.add('on')">
+      </div>
+    </div>
+
+    <p class="kicker">יצא לכם משהו טוב? תשלחו לי. אני אוהב לראות מה יוצא לאנשים.</p>
+
+    <details>
+      <summary><span>לראות את הפרומפט המלא</span></summary>
+      <pre id="prompt">תבנה לי עמוד אינטרנט, קובץ אחד, מתנת שנה טובה אינטראקטיבית לחבר. השם והדבר שהוא אוהב בשורה האחרונה. שם הקובץ: "שנה טובה ל[השם]".
 
 לטלפון בלבד:
 העמוד נפתח רק בטלפון, במסך צר ואנכי (390 פיקסלים רוחב). מחשב לא מעניין. הכל נמדד באחוזים מהמסך, שום דבר לא ברוחב קבוע. הסצנה, הברכה והכפתור נכנסים כולם במסך אחד בלי גלילה ובלי שדבר מסתיר דבר. פונט גדול, כפתור שאפשר ללחוץ עם אגודל.
@@ -83,27 +174,36 @@
 לפני הסצנה: הוראה אחת עד 5 מילים, רק מה לעשות. בלי תמונות חיצוניות. לא לשאול שאלות, תמציא ותבנה.
 
 השם שלו: [כאן השם] · הדבר שהוא הכי אוהב: [כאן הדבר]</pre>
-  </details>
+    </details>
+  </div>
+</section>
 
-  <footer>נבנה עם AI. רוצים ללמוד לעשות דברים כאלה? <a href="https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI">לסטטוס של נעם AI</a></footer>
-</div>
+<section class="foot">
+  <div class="container">
+    <span class="eyebrow-mono">NOAM AI</span>
+    <h2>רוצים ללמוד לעשות דברים כאלה?</h2>
+    <p>בסטטוס אני מראה כל יום משהו קטן עם AI. בלי הייטק, בלי מילים גדולות.</p>
+    <a class="btn-cta" href="https://wa.me/972544396883?text=אני+רוצה+להצטרף+לסטטוס+של+נעם+AI">להצטרף לסטטוס של נעם AI</a>
+    <small>שנה טובה ומתוקה. נעם.</small>
+  </div>
+</section>
 
 <script>
 (function(){
-  var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint');
   var text=document.getElementById('prompt').textContent;
-  function ok(){btn.textContent='הועתק! עכשיו לג\'מיני';btn.classList.add('done');hint.textContent='הפרומפט אצלכם. ממשיכים לצעד 1.';}
-  function fallback(){
-    var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');
-    ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);
-    ta.focus();ta.select();ta.setSelectionRange(0,text.length);
+  var main=document.getElementById('copyBtn'),hint=document.getElementById('hint');
+  function ok(btn){main.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! עכשיו לג\'מיני';main.classList.add('done');hint.textContent='הפרומפט אצלכם. ממשיכים לצעד 2.';if(btn&&btn!==main){btn.textContent='הועתק';}}
+  function fallback(btn){
+    var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,text.length);
     var done=false;try{done=document.execCommand('copy');}catch(e){}
     document.body.removeChild(ta);
-    if(done){ok();}else{hint.textContent='לא הצלחנו להעתיק אוטומטית. פתחו "לראות את הפרומפט המלא", לחיצה ארוכה, בחר הכל, העתק.';document.querySelector('details').open=true;}
+    if(done){ok(btn);}else{hint.textContent='לא הצלחנו להעתיק אוטומטית. למטה, "לראות את הפרומפט המלא": לחיצה ארוכה, בחר הכל, העתק.';document.querySelector('details').open=true;document.querySelector('details').scrollIntoView({behavior:'smooth'});}
   }
-  btn.addEventListener('click',function(){
-    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback);}else{fallback();}
-  });
+  function copy(btn){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){ok(btn)},function(){fallback(btn)});}else{fallback(btn);}}
+  main.addEventListener('click',function(){copy(main)});
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b)})});
+  var vw=document.getElementById('videoWrap'),id=vw.getAttribute('data-video');
+  if(id){document.getElementById('videoFrame').src='https://www.youtube.com/embed/'+id;vw.classList.add('on');}
 })();
 </script>
 </body>
