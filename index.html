@@ -53,10 +53,12 @@ a{color:var(--primary);text-decoration:none}
 .rule{width:56px;height:3px;margin:0 auto 16px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary-light),transparent)}
 /* ציר זמן */
 .steps{position:relative;padding-inline-start:0}
-.steps::before{content:"";position:absolute;top:24px;bottom:24px;inset-inline-end:23px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 60%,rgba(146,220,226,.25) 100%)}
+.steps::before{content:"";position:absolute;top:24px;bottom:24px;inset-inline-end:23px;width:3px;border-radius:3px;background:rgba(19,52,59,.12)}
+.steps .fill{position:absolute;top:24px;inset-inline-end:23px;width:3px;height:0;border-radius:3px;background:linear-gradient(180deg,var(--primary-dark),var(--primary) 70%,var(--primary-light));box-shadow:0 0 12px rgba(31,184,205,.55);transition:height .12s linear;z-index:1}
 .step{position:relative;padding-inline-end:64px;margin-bottom:26px;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .step.in{opacity:1;transform:none}
-.step-num{position:absolute;inset-inline-end:0;top:6px;z-index:2;font-family:var(--font-mono);font-weight:700;font-size:13px;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid var(--primary);color:var(--primary-dark);box-shadow:0 0 0 6px var(--paper),0 6px 18px rgba(31,184,205,.25)}
+.step-num{position:absolute;inset-inline-end:0;top:6px;z-index:2;font-family:var(--font-mono);font-weight:700;font-size:13px;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid rgba(19,52,59,.18);color:rgba(19,52,59,.4);box-shadow:0 0 0 6px var(--paper);transition:background .35s,border-color .35s,color .35s,box-shadow .35s,transform .35s}
+.step-num.lit{background:var(--primary);border-color:var(--primary);color:var(--white);box-shadow:0 0 0 6px var(--paper),0 6px 18px rgba(31,184,205,.45);transform:scale(1.06)}
 .card{background:var(--white);border:1px solid rgba(31,184,205,.18);border-radius:22px;padding:22px 20px 24px;box-shadow:0 2px 18px rgba(19,52,59,.05)}
 .step h3{font-size:clamp(19px,5vw,23px);font-weight:800;line-height:1.3;letter-spacing:-.01em;margin-bottom:8px}
 .step p{font-size:15.5px;line-height:1.8;color:var(--ink-60)}
@@ -141,7 +143,7 @@ a{color:var(--primary);text-decoration:none}
       <h2 class="sec-title">"אוקיי נעם, <span class="prog">מה עושים</span> פה?"</h2>
     </div>
 
-    <div class="steps">
+    <div class="steps"><div class="fill" id="fill"></div>
       <div class="step"><span class="step-num">01</span>
         <div class="card">
           <h3>למי הברכה?</h3>
@@ -268,6 +270,15 @@ a{color:var(--primary);text-decoration:none}
     if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,function(){fallback(text)});}else{fallback(text);}
   });
   try{if(new URLSearchParams(location.search).get('from')==='greeting'){document.getElementById('heroDefault').hidden=true;document.getElementById('heroFrom').hidden=false;}}catch(e){}
+  var stepsEl=document.querySelector('.steps'),fill=document.getElementById('fill'),nums=document.querySelectorAll('.step-num');
+  function prog(){
+    var r=stepsEl.getBoundingClientRect(),anchor=window.innerHeight*0.62;
+    var y=Math.max(0,Math.min(r.height-48,anchor-r.top-24));
+    fill.style.height=y+'px';
+    nums.forEach(function(n){var nr=n.getBoundingClientRect();n.classList.toggle('lit',nr.top+nr.height/2<=anchor);});
+  }
+  var tick=false;window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(function(){prog();tick=false;});}},{passive:true});
+  window.addEventListener('resize',prog);prog();
   var steps=document.querySelectorAll('.step');
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});steps.forEach(function(s){io.observe(s)});}
   else{steps.forEach(function(s){s.classList.add('in')});}
