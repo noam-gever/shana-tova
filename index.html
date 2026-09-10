@@ -74,6 +74,15 @@ a{color:var(--primary);text-decoration:none}
 .gallery.on{display:flex}
 .gallery img{flex:0 0 78%;scroll-snap-align:start;border-radius:14px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(19,52,59,.08)}
 .gallery img:not(.on){display:none}
+.more{margin-top:14px}
+.more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;color:var(--primary-dark);padding:10px 16px;border-radius:12px;background:var(--primary-50);border:1.5px solid rgba(31,184,205,.35)}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-family:var(--font-mono);font-size:16px;line-height:1}
+.more[open] summary::after{content:"\2212"}
+.more .body{margin-top:14px;padding-top:14px;border-top:1px dashed rgba(31,184,205,.3)}
+.more .body p{margin-bottom:8px}
+.more .body .cap{font-weight:700;color:var(--ink);margin-top:14px;margin-bottom:6px;font-size:15px}
+.more img{display:block;width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(19,52,59,.08)}
 .after{margin:10px auto 0;text-align:center;font-size:16px;font-weight:700;line-height:1.7;color:var(--primary-dark);padding:18px 20px;background:var(--white);border:1px solid rgba(31,184,205,.22);border-radius:16px}
 /* פוטר */
 .foot{background:linear-gradient(135deg,var(--space) 0%,#114f56 100%);color:#fff;padding:54px 18px 46px;text-align:center;position:relative;overflow:hidden}
@@ -120,7 +129,7 @@ a{color:var(--primary);text-decoration:none}
       <div class="step"><span class="step-num">01</span>
         <div class="card">
           <h3>למי הברכה?</h3>
-          <p>שם, ודבר אחד שהוא אוהב. זה כל מה שצריך. הפרומפט נבנה לבד.</p>
+          <p>שם, ודבר אחד שהוא אוהב. הפרומפט נבנה לבד.</p>
           <div class="field"><label for="nm">השם שלו או שלה</label><input id="nm" type="text" placeholder="לדוגמה: יוסי" autocomplete="off"></div>
           <div class="field"><label for="lv">דבר אחד שהוא אוהב</label><input id="lv" type="text" placeholder="קפה, כדורגל, לישון, טיסות..." autocomplete="off"></div>
           <div class="act"><button class="btn-cta off" id="copyBtn" type="button">
@@ -133,38 +142,53 @@ a{color:var(--primary);text-decoration:none}
       <div class="step"><span class="step-num">02</span>
         <div class="card">
           <h3>נכנסים לג'מיני</h3>
-          <p>באפליקציה של Gemini בטלפון, או דרך הכפתור:</p>
+          <p>באפליקציה של Gemini, או דרך הכפתור.</p>
           <div class="act"><a class="btn-ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a></div>
-          <img class="shot" src="assets/step-2.png" alt="" onload="this.classList.add('on')">
         </div>
       </div>
 
       <div class="step"><span class="step-num">03</span>
         <div class="card">
-          <h3>לוחצים על מצב Pro ועל Canvas</h3>
-          <p>שניהם מתחת לתיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
-          <img class="shot" src="assets/step-3.png" alt="" onload="this.classList.add('on')">
+          <h3>בוחרים Pro ו-Canvas</h3>
+          <p>שניהם ליד תיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
+          <details class="more"><summary>הוראות מפורטות עם תמונות</summary>
+            <div class="body">
+              <p class="cap">Pro: לוחצים על החץ הקטן ליד המילה Pro, ובוחרים "3.1 Pro".</p>
+              <img src="assets/step-3a.png" alt="תיבת הכתיבה של ג'מיני, עם עיגול סביב Pro" loading="lazy">
+              <p class="cap">Canvas: לוחצים על ה-+ בצד, ובתפריט שנפתח בוחרים Canvas.</p>
+              <img src="assets/step-3b.png" alt="תפריט הפלוס בג'מיני, עם עיגול סביב Canvas" loading="lazy">
+            </div>
+          </details>
         </div>
       </div>
 
       <div class="step"><span class="step-num">04</span>
         <div class="card">
           <h3>מדביקים, ושולחים</h3>
-          <p>לחיצה ארוכה בתיבה, "הדבק", ושולחים. השם והדבר כבר בפנים. מחכים דקה שג'מיני יבנה.</p>
-          <img class="shot" src="assets/step-4.png" alt="" onload="this.classList.add('on')">
+          <p>לחיצה ארוכה בתיבה, "הדבק", ושולחים. השם והדבר כבר בפנים.</p>
+          <details class="more" id="more4" hidden><summary>הוראות מפורטות עם תמונות</summary>
+            <div class="body">
+              <p>מחכים בערך דקה. ג'מיני מצייר, בונה, ומציג את הברכה ישר על המסך. אפשר ללחוץ ולנסות.</p>
+              <img src="assets/step-4.png" alt="" loading="lazy" onload="document.getElementById('more4').hidden=false">
+            </div>
+          </details>
         </div>
       </div>
 
       <div class="step"><span class="step-num">05</span>
         <div class="card">
           <h3>שיתוף, ושולחים למי שאוהבים</h3>
-          <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. מי שמקבל פותח בלי חשבון ובלי כלום.</p>
-          <div class="gallery" id="gallery">
-            <img src="assets/step-5a.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-            <img src="assets/step-5b.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-            <img src="assets/step-5c.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-            <img src="assets/step-5d.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-          </div>
+          <p>"שיתוף" למעלה, מעתיקים קישור, שולחים בוואטסאפ. מי שמקבל פותח בלי חשבון.</p>
+          <details class="more" id="more5" hidden><summary>הוראות מפורטות עם תמונות</summary>
+            <div class="body">
+              <div class="gallery" id="gallery">
+                <img src="assets/step-5a.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on');document.getElementById('more5').hidden=false">
+                <img src="assets/step-5b.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+                <img src="assets/step-5c.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+                <img src="assets/step-5d.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
