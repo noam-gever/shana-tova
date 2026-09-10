@@ -24,11 +24,11 @@ a{color:var(--primary);text-decoration:none}
 .eyebrow-mono{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-light);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
 .eyebrow-mono::before,.eyebrow-mono::after{content:"";width:24px;height:1px;background:currentColor;opacity:.45}
 .section-light .eyebrow-mono{color:var(--primary-dark)}
-.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-he);font-weight:800;font-size:clamp(16px,4.3vw,19px);line-height:1.3;padding:17px 30px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;background:var(--primary);color:var(--white);box-shadow:0 4px 24px rgba(31,184,205,.3);width:100%;max-width:380px}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-he);font-weight:800;font-size:clamp(16px,4.3vw,19px);line-height:1.3;padding:17px 30px;border-radius:14px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,opacity .2s;background:var(--primary);color:var(--white);box-shadow:0 4px 24px rgba(31,184,205,.3);width:100%;max-width:380px}
 .btn-cta:active{transform:translateY(1px)}
 .btn-cta.done{background:#2f9e6d;box-shadow:0 4px 24px rgba(47,158,109,.35)}
 .btn-cta svg{width:22px;height:22px;flex:none}
-/* HERO קטן */
+/* HERO */
 .hero{background:var(--space);padding:34px 18px 40px;position:relative;overflow:hidden;text-align:center;color:var(--white)}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(31,184,205,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.07) 1px,transparent 1px);background-size:60px 60px}
 .hero-glow{position:absolute;top:-260px;right:-160px;width:560px;height:560px;background:radial-gradient(ellipse,rgba(31,184,205,.24) 0%,transparent 65%);pointer-events:none}
@@ -41,31 +41,40 @@ a{color:var(--primary);text-decoration:none}
 .deco-pom{width:120px;top:-8px;left:-18px;transform:rotate(-12deg)}
 .deco-honey{width:74px;bottom:-6px;right:14px}
 /* צעדים */
-.section-light{position:relative;padding:52px 0 60px;background:linear-gradient(180deg,var(--paper) 0%,var(--mint-100) 45%,var(--paper) 100%)}
+.section-light{position:relative;padding:52px 0 64px;background:linear-gradient(180deg,var(--paper) 0%,var(--mint-100) 45%,var(--paper) 100%)}
 .section-light::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(31,184,205,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.045) 1px,transparent 1px);background-size:52px 52px}
 .section-light .container{position:relative;z-index:1}
-.sec-head{text-align:center;margin-bottom:26px}
+.sec-head{text-align:center;margin-bottom:30px}
 .sec-title{font-size:clamp(24px,6vw,34px);font-weight:900;line-height:1.3;letter-spacing:-.02em}
 .sec-title .prog{color:var(--primary-dark);background-image:linear-gradient(180deg,transparent 78%,rgba(31,184,205,.3) 78%,rgba(31,184,205,.14) 100%)}
 .rule{width:56px;height:3px;margin:0 auto 16px;border-radius:3px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary-light),transparent)}
-/* כרטיסיות שנערמות */
-.steps{--top:14px}
-.step{position:sticky;top:calc(var(--top) + var(--i) * 14px);margin-bottom:22px;background:var(--white);border:1px solid rgba(31,184,205,.2);border-radius:22px;padding:22px 20px 24px;box-shadow:0 -6px 30px rgba(19,52,59,.08),0 12px 34px rgba(19,52,59,.08);min-height:200px}
-.step::after{content:"";position:absolute;inset-inline-end:0;top:0;width:4px;height:100%;border-radius:0 22px 22px 0;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 45%,transparent 100%)}
-.step-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-.step-num{font-family:var(--font-mono);font-weight:700;font-size:13px;width:44px;height:44px;flex:none;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(31,184,205,.16),rgba(31,184,205,.05));border:1px solid rgba(31,184,205,.24);color:var(--primary-dark)}
-.step h3{font-size:clamp(19px,5vw,23px);font-weight:800;line-height:1.3;letter-spacing:-.01em}
+/* ציר זמן */
+.steps{position:relative;padding-inline-start:0}
+.steps::before{content:"";position:absolute;top:24px;bottom:24px;inset-inline-end:23px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-light) 60%,rgba(146,220,226,.25) 100%)}
+.step{position:relative;padding-inline-end:64px;margin-bottom:26px;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.step.in{opacity:1;transform:none}
+.step-num{position:absolute;inset-inline-end:0;top:6px;z-index:2;font-family:var(--font-mono);font-weight:700;font-size:13px;width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--white);border:2px solid var(--primary);color:var(--primary-dark);box-shadow:0 0 0 6px var(--paper),0 6px 18px rgba(31,184,205,.25)}
+.card{background:var(--white);border:1px solid rgba(31,184,205,.18);border-radius:22px;padding:22px 20px 24px;box-shadow:0 2px 18px rgba(19,52,59,.05)}
+.step h3{font-size:clamp(19px,5vw,23px);font-weight:800;line-height:1.3;letter-spacing:-.01em;margin-bottom:8px}
 .step p{font-size:15.5px;line-height:1.8;color:var(--ink-60)}
-.step .act{margin-top:16px;display:flex;justify-content:center}
-.step .act .btn-cta{max-width:100%}
+.field{margin-top:14px}
+.field label{display:block;font-weight:700;font-size:14px;color:var(--primary-dark);margin-bottom:6px}
+.field input{width:100%;font-family:var(--font-he);font-size:17px;padding:14px 16px;border-radius:12px;border:1.5px solid var(--border);background:var(--paper);color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.field input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(31,184,205,.15);background:var(--white)}
+.field input::placeholder{color:#a3b3b6}
+.act{margin-top:18px;display:flex;justify-content:center}
+.act .btn-cta{max-width:100%}
+.btn-cta.off{opacity:.45}
 .btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:17px;padding:15px 26px;border-radius:14px;border:2px solid var(--primary);color:var(--primary-dark);background:var(--primary-50);width:100%}
+.hint{text-align:center;font-size:13.5px;margin-top:10px;min-height:20px;color:var(--ink-60)}
+.hint.err{color:#bf505c;font-weight:700}
 .shot{display:none;margin-top:16px;border-radius:14px;border:1px solid var(--border);width:100%;box-shadow:0 8px 24px rgba(19,52,59,.08)}
 .shot.on{display:block}
 .gallery{display:none;margin-top:16px;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;-webkit-overflow-scrolling:touch}
 .gallery.on{display:flex}
 .gallery img{flex:0 0 78%;scroll-snap-align:start;border-radius:14px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(19,52,59,.08)}
 .gallery img:not(.on){display:none}
-.after{position:relative;z-index:2;margin:28px auto 0;text-align:center;font-size:16px;font-weight:700;line-height:1.7;color:var(--primary-dark);padding:18px 20px;background:var(--white);border:1px solid rgba(31,184,205,.22);border-radius:16px}
+.after{margin:10px auto 0;text-align:center;font-size:16px;font-weight:700;line-height:1.7;color:var(--primary-dark);padding:18px 20px;background:var(--white);border:1px solid rgba(31,184,205,.22);border-radius:16px}
 /* פוטר */
 .foot{background:linear-gradient(135deg,var(--space) 0%,#114f56 100%);color:#fff;padding:54px 18px 46px;text-align:center;position:relative;overflow:hidden}
 .foot::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(31,184,205,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(31,184,205,.06) 1px,transparent 1px);background-size:44px 44px}
@@ -74,22 +83,19 @@ a{color:var(--primary);text-decoration:none}
 .foot p{font-size:15.5px;line-height:1.8;color:rgba(255,255,255,.55);margin:0 auto 24px;max-width:440px}
 .foot small{display:block;margin-top:28px;font-size:12px;color:rgba(255,255,255,.3)}
 .deco-apple{width:64px;bottom:10px;left:16px;opacity:.16}
+@media (prefers-reduced-motion:reduce){.step{opacity:1;transform:none;transition:none}}
 </style>
-</head>
-<body>
+</head><body>
 
 <section class="hero">
   <div class="hero-grid"></div><div class="hero-glow"></div>
-  <!-- רימון בקו, קטן ושקוף -->
   <svg class="deco deco-pom" viewBox="0 0 120 130" fill="none" stroke="#92dce2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M60 118c-28 0-44-19-44-44 0-20 14-36 30-42 9-4 19-4 28 0 16 6 30 22 30 42 0 25-16 44-44 44z"/>
     <path d="M47 32l-4-14h34l-4 14M52 18l-2-8M60 17l0-9M68 18l2-8"/>
     <circle cx="48" cy="70" r="5"/><circle cx="62" cy="62" r="5"/><circle cx="74" cy="76" r="5"/><circle cx="58" cy="86" r="5"/><circle cx="44" cy="92" r="4"/><circle cx="76" cy="94" r="4"/>
   </svg>
-  <!-- טיפת דבש -->
   <svg class="deco deco-honey" viewBox="0 0 80 100" fill="none" stroke="#92dce2" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-    <path d="M40 8c0 0-24 30-24 50a24 24 0 0 0 48 0C64 38 40 8 40 8z"/>
-    <path d="M28 62a12 12 0 0 0 10 12"/>
+    <path d="M40 8c0 0-24 30-24 50a24 24 0 0 0 48 0C64 38 40 8 40 8z"/><path d="M28 62a12 12 0 0 0 10 12"/>
   </svg>
   <div class="container">
     <img class="logo" src="assets/logo-dark-bg.png" alt="נעם AI">
@@ -111,42 +117,54 @@ a{color:var(--primary);text-decoration:none}
     </div>
 
     <div class="steps">
-      <div class="step" style="--i:0">
-        <div class="step-top"><span class="step-num">01</span><h3>מעתיקים את הפרומפט</h3></div>
-        <p>לחיצה אחת, וזה בזיכרון של הטלפון. לא צריך לקרוא אותו, לא צריך להבין אותו.</p>
-        <div class="act"><button class="btn-cta" id="copyBtn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
-          העתקת הפרומפט</button></div>
-        <p id="hint" style="text-align:center;font-size:13.5px;margin-top:10px;min-height:20px"></p>
+      <div class="step"><span class="step-num">01</span>
+        <div class="card">
+          <h3>למי הברכה?</h3>
+          <p>שם, ודבר אחד שהוא אוהב. זה כל מה שצריך. הפרומפט נבנה לבד.</p>
+          <div class="field"><label for="nm">השם שלו או שלה</label><input id="nm" type="text" placeholder="לדוגמה: יוסי" autocomplete="off"></div>
+          <div class="field"><label for="lv">דבר אחד שהוא אוהב</label><input id="lv" type="text" placeholder="קפה, כדורגל, לישון, טיסות..." autocomplete="off"></div>
+          <div class="act"><button class="btn-cta off" id="copyBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>
+            העתקת הפרומפט</button></div>
+          <p class="hint" id="hint"></p>
+        </div>
       </div>
 
-      <div class="step" style="--i:1">
-        <div class="step-top"><span class="step-num">02</span><h3>נכנסים לג'מיני</h3></div>
-        <p>באפליקציה של Gemini בטלפון, או דרך הכפתור:</p>
-        <div class="act"><a class="btn-ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a></div>
-        <img class="shot" src="assets/step-2.png" alt="" onload="this.classList.add('on')">
+      <div class="step"><span class="step-num">02</span>
+        <div class="card">
+          <h3>נכנסים לג'מיני</h3>
+          <p>באפליקציה של Gemini בטלפון, או דרך הכפתור:</p>
+          <div class="act"><a class="btn-ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">לפתוח את ג'מיני</a></div>
+          <img class="shot" src="assets/step-2.png" alt="" onload="this.classList.add('on')">
+        </div>
       </div>
 
-      <div class="step" style="--i:2">
-        <div class="step-top"><span class="step-num">03</span><h3>לוחצים על מצב Pro ועל Canvas</h3></div>
-        <p>שניהם מתחת לתיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
-        <img class="shot" src="assets/step-3.png" alt="" onload="this.classList.add('on')">
+      <div class="step"><span class="step-num">03</span>
+        <div class="card">
+          <h3>לוחצים על מצב Pro ועל Canvas</h3>
+          <p>שניהם מתחת לתיבת הכתיבה. בלי Canvas תקבלו קוד במקום אתר.</p>
+          <img class="shot" src="assets/step-3.png" alt="" onload="this.classList.add('on')">
+        </div>
       </div>
 
-      <div class="step" style="--i:3">
-        <div class="step-top"><span class="step-num">04</span><h3>מדביקים, ומשנים את הסוף</h3></div>
-        <p>בשורה האחרונה של הפרומפט מחליפים את השם ואת הדבר שהאדם אוהב. שולחים, ומחכים דקה שג'מיני יבנה.</p>
-        <img class="shot" src="assets/step-4.png" alt="" onload="this.classList.add('on')">
+      <div class="step"><span class="step-num">04</span>
+        <div class="card">
+          <h3>מדביקים, ושולחים</h3>
+          <p>לחיצה ארוכה בתיבה, "הדבק", ושולחים. השם והדבר כבר בפנים. מחכים דקה שג'מיני יבנה.</p>
+          <img class="shot" src="assets/step-4.png" alt="" onload="this.classList.add('on')">
+        </div>
       </div>
 
-      <div class="step" style="--i:4">
-        <div class="step-top"><span class="step-num">05</span><h3>שיתוף, ושולחים למי שאוהבים</h3></div>
-        <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. מי שמקבל פותח בלי חשבון ובלי כלום.</p>
-        <div class="gallery" id="gallery">
-          <img src="assets/step-5a.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-          <img src="assets/step-5b.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-          <img src="assets/step-5c.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
-          <img src="assets/step-5d.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+      <div class="step"><span class="step-num">05</span>
+        <div class="card">
+          <h3>שיתוף, ושולחים למי שאוהבים</h3>
+          <p>כשמוכן, לוחצים על "שיתוף" למעלה, מעתיקים את הקישור, ושולחים בוואטסאפ. מי שמקבל פותח בלי חשבון ובלי כלום.</p>
+          <div class="gallery" id="gallery">
+            <img src="assets/step-5a.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+            <img src="assets/step-5b.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+            <img src="assets/step-5c.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+            <img src="assets/step-5d.png" alt="" onload="this.classList.add('on');this.parentNode.classList.add('on')">
+          </div>
         </div>
       </div>
     </div>
@@ -195,16 +213,26 @@ a{color:var(--primary);text-decoration:none}
 
 <script>
 (function(){
-  var text=document.getElementById('prompt').textContent;
-  var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint');
-  function ok(){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! ממשיכים לצעד 2';btn.classList.add('done');hint.textContent='';}
-  function fallback(){
+  var base=document.getElementById('prompt').textContent;
+  var btn=document.getElementById('copyBtn'),hint=document.getElementById('hint'),nm=document.getElementById('nm'),lv=document.getElementById('lv');
+  function build(){return base.replace('[כאן השם]',nm.value.trim()).replace('[כאן הדבר]',lv.value.trim());}
+  function ready(){var r=nm.value.trim()&&lv.value.trim();btn.classList.toggle('off',!r);return r;}
+  nm.addEventListener('input',ready);lv.addEventListener('input',ready);
+  function ok(){btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> הועתק! ממשיכים לצעד 2';btn.classList.add('done');hint.className='hint';hint.textContent='הפרומפט של '+nm.value.trim()+' אצלכם.';}
+  function fallback(text){
     var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,text.length);
     var done=false;try{done=document.execCommand('copy');}catch(e){}
     document.body.removeChild(ta);
-    if(done){ok();}else{var pre=document.getElementById('prompt');pre.hidden=false;pre.style.cssText='white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #e4e3d4;border-radius:16px;padding:18px;font-family:inherit;font-size:14px;line-height:1.7;margin-top:18px;color:#2e565e;text-align:right';hint.textContent='לא הצלחנו להעתיק אוטומטית. הטקסט למטה: לחיצה ארוכה, בחר הכל, העתק.';}
+    if(done){ok();}else{var pre=document.getElementById('prompt');pre.textContent=text;pre.hidden=false;pre.style.cssText='white-space:pre-wrap;word-break:break-word;background:#fff;border:1px solid #e4e3d4;border-radius:16px;padding:18px;font-family:inherit;font-size:14px;line-height:1.7;margin-top:18px;color:#2e565e;text-align:right';hint.className='hint err';hint.textContent='לא הצלחנו להעתיק אוטומטית. הטקסט למטה: לחיצה ארוכה, בחר הכל, העתק.';}
   }
-  btn.addEventListener('click',function(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback);}else{fallback();}});
+  btn.addEventListener('click',function(){
+    if(!ready()){hint.className='hint err';hint.textContent=!nm.value.trim()?'רגע, איך קוראים לו?':'ודבר אחד שהוא אוהב?';(!nm.value.trim()?nm:lv).focus();return;}
+    var text=build();
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,function(){fallback(text)});}else{fallback(text);}
+  });
+  var steps=document.querySelectorAll('.step');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});steps.forEach(function(s){io.observe(s)});}
+  else{steps.forEach(function(s){s.classList.add('in')});}
 })();
 </script>
 </body>
